@@ -1,16 +1,22 @@
 package com.github.glo2003.payroll;
 
+import com.github.glo2003.payroll.employee.Employee;
+
 public class Paycheck {
-    private String to;
+    private Employee owner;
     private float amount;
 
-    public Paycheck(String to, float amount) {
-        this.to = to;
+    public Paycheck(Employee owner, float amount) {
+        this.owner = owner;
         this.amount = amount;
     }
 
-    public String getTo() {
-        return to;
+    public Employee getOwner() {
+        return owner;
+    }
+
+    public String getOwnerName() {
+        return owner.getName();
     }
 
     public float getAmount() {

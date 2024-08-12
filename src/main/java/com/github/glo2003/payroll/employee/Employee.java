@@ -1,9 +1,9 @@
-package com.github.glo2003.payroll;
+package com.github.glo2003.payroll.employee;
 
 
 public abstract class Employee {
-    private String name;
-    private String role;
+    private final String name;
+    private final String role;
     private int vacation_days;
 
     public Employee(String name, String role, int vacation_days) {
@@ -35,5 +35,12 @@ public abstract class Employee {
                 ", role='" + role + '\'' +
                 ", vacation_days=" + vacation_days +
                 '}';
+    }
+
+    public void raiseSalary(float raise) {
+    }
+
+    public float getSalary() {
+        return 0;
     }
 }

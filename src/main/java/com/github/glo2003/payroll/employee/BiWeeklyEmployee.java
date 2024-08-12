@@ -1,9 +1,9 @@
-package com.github.glo2003.payroll;
+package com.github.glo2003.payroll.employee;
 
-public class SalariedEmployee extends Employee {
+public class BiWeeklyEmployee extends Employee {
     private float biweekly;
 
-    public SalariedEmployee(String name, String role, int vacation_days, float biweekly) {
+    public BiWeeklyEmployee(String name, String role, int vacation_days, float biweekly) {
         super(name, role, vacation_days);
         this.biweekly = biweekly;
     }
@@ -24,5 +24,15 @@ public class SalariedEmployee extends Employee {
                 ", vacation_days=" + this.getVacation_days() +
                 ", monthly=" + biweekly +
                 '}';
+    }
+
+    @Override
+    public void raiseSalary(float raise) {
+        setBiweekly(this.getBiweekly() + raise);
+    }
+
+    @Override
+    public float getSalary() {
+        return getBiweekly();
     }
 }
